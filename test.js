@@ -8,12 +8,13 @@ let displayLose = document.getElementById('displayLose');
 function disable() {
   document.getElementById('inputField').disabled = true;
 }
-let counter = 0;
+let counter = 3;
 let randNumber = parseInt(Math.random() * 10);
 console.log(randNumber);
 
 const showNumber = () => {
-  counter++;
+  counter--;
+
   displayCount.innerText = `${counter}`
   let inputValue = parseInt(inputField.value);
 
@@ -21,12 +22,13 @@ const showNumber = () => {
     count.innerText = 'Please guess between 1-9 and Input Correctly'
   }
   else if (inputValue === randNumber) {
+    displayWin.style.display = 'block'
     displayWin.innerText = `Congratulations!! You win after ${counter} times!`;
     reset.innerText = 'Reset Game';
     disable();
     counter = 0;
   }
-  else if (counter === 3) {
+  else if (counter === 0) {
     displayLose.style.display = 'block'
     displayLose.innerText = `Opps! You have losen! Try again.`;
     disable();

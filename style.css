@@ -38,9 +38,13 @@ button {
 }
 
 #displayWin {
+  display: none;
   color: green;
   font-size: 35px;
   font-weight: bold;
+  background-color: azure;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 #displayLose {
