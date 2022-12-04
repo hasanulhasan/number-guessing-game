@@ -32,7 +32,7 @@ const showNumber = () => {
     displayLose.style.display = 'block'
     displayLose.innerText = `Opps! You have losen! Try again.`;
     disable();
-    counter = 0;
+    counter = 3;
   }
   else if (inputValue > randNumber) {
     count.innerText = 'You Guessed too high'
