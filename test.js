@@ -4,6 +4,10 @@ let displayCount = document.getElementById('displayCount');
 let inputField = document.getElementById('inputField');
 let reset = document.getElementById('reset');
 
+function disable() {
+  document.getElementById('inputField').disabled = true;
+}
+
 let counter = 0;
 let randNumber = parseInt(Math.random() * 10);
 console.log(randNumber);
@@ -15,7 +19,8 @@ const showNumber = () => {
   if (inputValue === randNumber) {
     displayWin.innerText = `Congratulations!! You win after ${counter} times!`;
     reset.innerText = 'Reset Game';
-    inputValue.disabled = true;
+    // inputValue.disabled = true;
+    disable();
     counter = 0;
   }
   else if (inputValue > randNumber) {
