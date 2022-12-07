@@ -10,10 +10,12 @@ function disable() {
 }
 let counter = 3;
 let randNumber = parseInt(Math.random() * 10);
+let tryCount = 0;
 console.log(randNumber);
 
 const showNumber = () => {
   counter--;
+  tryCount++;
 
   displayCount.innerText = `${counter}`
   let inputValue = parseInt(inputField.value);
@@ -23,7 +25,7 @@ const showNumber = () => {
   }
   else if (inputValue === randNumber) {
     displayWin.style.display = 'block'
-    displayWin.innerText = `Congratulations!! You win after ${counter} times!`;
+    displayWin.innerText = `Congratulations!! You win after ${tryCount} times!`;
     reset.innerText = 'Reset Game';
     disable();
     counter = 0;
